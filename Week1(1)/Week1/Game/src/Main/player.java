@@ -20,11 +20,11 @@ public class player {
         return level;
     }
 
-    public void increaseBurnout() {
-        burnout = this.burnout + 0*difficulty;
+    public void increaseBurnout(int amount) {
+        burnout = this.burnout + amount*difficulty;
     }
-    public void lowerBurnout() {
-        burnout = this.burnout - 0*difficulty;
+    public void lowerBurnout(int amount) {
+        burnout = this.burnout - amount*difficulty;
     }
 
     public void setLevel(int level) {
