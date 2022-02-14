@@ -4,7 +4,9 @@
       <root url="jar://$PROJECT_DIR$/Week1(1)/Week1/lib/saxionapp.jar!/" />
       <root url="jar://$PROJECT_DIR$/Week1(1)/Week1/lib/saxionapp-javadoc.jar!/" />
     </CLASSES>
-    <JAVADOC />
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/Week1(1)/Week1/lib/saxionapp-javadoc.jar!/" />
+    </JAVADOC>
     <SOURCES />
   </library>
 </component>
