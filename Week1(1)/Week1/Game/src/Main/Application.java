@@ -9,7 +9,18 @@ public class Application implements Runnable {
     }
 
     public void run() {
-        
+        CsvReader save = new CsvReader("save.csv");
+        SaxionApp.printLine("to get to the next screen press a key");
+        SaxionApp.readChar();
+        int difficulty;
+        SaxionApp.printLine("please select a difficulty setting");
+        SaxionApp.printLine("1: easy");
+        SaxionApp.printLine("2: medium");
+        SaxionApp.printLine("3: hard");
+        difficulty = SaxionApp.readInt();
+        player player = new player(difficulty);
+        SaxionApp.readChar();
+
     }
 
 
