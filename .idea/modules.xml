@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Week1(1)/Week1/Exercise2/Exercise2.iml" filepath="$PROJECT_DIR$/Week1(1)/Week1/Exercise2/Exercise2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Week1(1)/Week1/Exercise3/Exercise3.iml" filepath="$PROJECT_DIR$/Week1(1)/Week1/Exercise3/Exercise3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Week1(1)/Week1/Exercise4/Exercise4.iml" filepath="$PROJECT_DIR$/Week1(1)/Week1/Exercise4/Exercise4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Week1(1)/Week1/Exercise5/Exercise5.iml" filepath="$PROJECT_DIR$/Week1(1)/Week1/Exercise5/Exercise5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Week1(1)/Week1/Exercise6/Exercise6.iml" filepath="$PROJECT_DIR$/Week1(1)/Week1/Exercise6/Exercise6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Week1(1)/Week1/Game/Game.iml" filepath="$PROJECT_DIR$/Week1(1)/Week1/Game/Game.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/it-s-in-the-game.iml" filepath="$PROJECT_DIR$/.idea/it-s-in-the-game.iml" />
+    </modules>
+  </component>
+</project>
