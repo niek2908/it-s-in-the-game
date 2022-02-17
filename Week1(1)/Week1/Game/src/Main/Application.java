@@ -29,30 +29,27 @@ public class Application implements Runnable {
         player player = new player(difficulty);
         SaxionApp.clear();
 
-        while (player.getBurnout() != 0) {
-            Scenario scenario = new Scenario();
-            player.drawTemplate(scenario);
-
             while (player.getBurnout() != 100 && player.getBurnout() != 0) {
-
+            player.drawTemplate();
 
             }
 
             SaxionApp.drawBorderedText("congratulations, you made it out of your burnout", xmiddle, ymiddle, 20);
         }
-    }
+
 
     public int init(int xmiddle, int ymiddle) {
-
-        SaxionApp.setFill(Color.white);
+SaxionApp.setBackgroundColor(Color.white);
+        SaxionApp.setFill(Color.black);
         SaxionApp.turnBorderOff();
         SaxionApp.drawBorderedText("to get to the next screen press a key", xmiddle, ymiddle, 20);
         SaxionApp.readChar();
         SaxionApp.clear();
-        SaxionApp.printLine("please select a difficulty setting");
-        SaxionApp.printLine("1: easy");
-        SaxionApp.printLine("2: medium");
-        SaxionApp.printLine("3: hard");
+        SaxionApp.printLine("please select a difficulty setting",Color.black);
+        SaxionApp.printLine("1: easy",Color.black);
+        SaxionApp.printLine("2: medium",Color.black);
+        SaxionApp.printLine("3: hard",Color.black);
+
         return SaxionApp.readInt();
 
     }

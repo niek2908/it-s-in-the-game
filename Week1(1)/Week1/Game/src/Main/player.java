@@ -59,9 +59,9 @@ public class player {
     }
 
     
-    public void drawTemplate(Scenario scenario) {
+    public void drawTemplate() {
+        SaxionApp.turnBorderOn();
         SaxionApp.turnFillOff();
-        SaxionApp.turnBorderOff();
         SaxionApp.setBorderColor(Color.black);
         SaxionApp.drawRectangle(50, 50, 1750, 650);
 
