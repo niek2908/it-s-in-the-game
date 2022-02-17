@@ -47,6 +47,14 @@ public class player {
         this.level = level;
     }
 
+    public void pay(int amount){
+        this.money = this.money - amount;
+
+    }
+    public void earn_money(int amount){
+        this.money = this.money + amount;
+    }
+
     
     public void drawTemplate(Scenario scenario) {
         SaxionApp.turnFillOff();
