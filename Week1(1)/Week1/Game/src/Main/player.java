@@ -8,7 +8,7 @@ import nl.saxion.app.CsvReader;
 
 public class player {
     private int burnout;
-     int level;
+    int level;
     private int difficulty;
     private int time;
     private int money;
@@ -16,11 +16,13 @@ public class player {
     public int getDifficulty() {
         return difficulty;
     }
-    public  player(int difficulty){
+
+    public player(int difficulty) {
 
         this.difficulty = difficulty;
     }
-    public int getTime(){
+
+    public int getTime() {
         return time;
     }
 
@@ -37,17 +39,27 @@ public class player {
     }
 
     public void increaseBurnout(int amount) {
-        burnout = this.burnout + amount*difficulty;
+        burnout = this.burnout + amount * difficulty;
     }
+
     public void lowerBurnout(int amount) {
-        burnout = this.burnout - amount*difficulty;
+        burnout = this.burnout - amount * difficulty;
     }
 
     public void setLevel(int level) {
         this.level = level;
     }
 
-    
+    public void pay(int amount) {
+        this.money = this.money - amount;
+
+    }
+
+    public void earn_money(int amount) {
+        this.money = this.money + amount;
+    }
+
+
     public void drawTemplate(Scenario scenario) {
         SaxionApp.turnFillOff();
         SaxionApp.turnBorderOff();
