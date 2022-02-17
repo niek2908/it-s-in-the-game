@@ -11,8 +11,9 @@ public class player {
     private int burnout = 10;
     int level;
     private int difficulty;
-    private int time;
-    private int money;
+    private int time = 14;
+    private int day = 0;
+    private int money = 500;
 
     public int getDifficulty() {
         return difficulty;
@@ -69,11 +70,19 @@ public class player {
 
         //draw burnout meter
         SaxionApp.turnFillOn();
-        SaxionApp.drawText("Progress", 1600, 1000, 30);
+        SaxionApp.setFill(Color.BLACK);
+        SaxionApp.drawText("Progress:", 1500, 720, 20);
+        SaxionApp.setFill(Color.GRAY);
+        SaxionApp.drawRectangle(1600,720,200,20);
+        SaxionApp.setFill(Color.GREEN);
+        SaxionApp.drawRectangle(1600,720,burnout*2,20);
 
-        //draw time and date
+        //draw time and day
+        SaxionApp.drawText("Time: " + time + ":00",50,720,20);
+        SaxionApp.drawText("Day: " + day,50,750,20);
 
         //draw money
+        SaxionApp.drawText("Money: €" + money,50,780,20);
     }
 }
 
