@@ -4,6 +4,7 @@ public class player {
     private int burnout;
     private int level;
     private int difficulty;
+    private int time;
 
 
     public int getDifficulty() {
@@ -12,6 +13,14 @@ public class player {
     public  player(int difficulty){
 
     }
+    public int getTime(){
+        return time;
+    }
+
+    public void setTime(int time) {
+        this.time = time;
+    }
+
     public int getBurnout() {
         return burnout;
     }
