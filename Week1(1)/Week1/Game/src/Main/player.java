@@ -4,12 +4,13 @@ import nl.saxion.app.SaxionApp;
 
 import java.awt.*;
 
+import nl.saxion.app.CsvReader;
+
 public class player {
     private int burnout;
     private int level;
     private int difficulty;
     private int time;
-
 
     public int getDifficulty() {
         return difficulty;
@@ -53,3 +54,4 @@ public class player {
         SaxionApp.drawRectangle(50, 50, 1750, 650);
     }
 }
+
