@@ -28,7 +28,7 @@ public class Application implements Runnable {
         int difficulty = init(xmiddle, ymiddle);
         player player = new player(difficulty);
         SaxionApp.clear();
-        while (player.getBurnout() != 0) {
+        while (player.getBurnout() != 100 && player.getBurnout() != 0) {
 
         }
 

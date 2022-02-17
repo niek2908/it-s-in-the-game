@@ -7,7 +7,7 @@ import java.awt.*;
 import nl.saxion.app.CsvReader;
 
 public class player {
-    private int burnout;
+    private int burnout = 10;
     int level;
     private int difficulty;
     private int time;
