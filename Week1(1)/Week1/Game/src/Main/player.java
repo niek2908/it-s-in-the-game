@@ -45,7 +45,7 @@ public class player {
         this.level = level;
     }
 
-
+    
     public void drawTemplate(Scenario scenario) {
         SaxionApp.turnFillOff();
         SaxionApp.turnBorderOff();
