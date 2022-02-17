@@ -11,6 +11,7 @@ public class player {
      int level;
     private int difficulty;
     private int time;
+    private int money;
 
     public int getDifficulty() {
         return difficulty;

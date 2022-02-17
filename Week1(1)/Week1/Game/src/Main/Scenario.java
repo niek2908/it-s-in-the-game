@@ -7,5 +7,6 @@ public class Scenario {
      String answer3;
      String answer4;
      String location;
-
+     String time;
+     String money;
 }
