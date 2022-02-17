@@ -52,6 +52,12 @@ public class player {
         SaxionApp.turnBorderOff();
         SaxionApp.setBorderColor(Color.black);
         SaxionApp.drawRectangle(50, 50, 1750, 650);
+
+        //draw burnout meter
+
+        //draw time and date
+
+        //draw money
     }
 }
 
