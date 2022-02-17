@@ -7,6 +7,7 @@ import java.awt.*;
 import nl.saxion.app.CsvReader;
 
 public class player {
+
     private int burnout = 10;
     int level;
     private int difficulty;
@@ -50,15 +51,16 @@ public class player {
         this.level = level;
     }
 
-    public void pay(int amount){
+    public void pay(int amount) {
         this.money = this.money - amount;
 
     }
-    public void earn_money(int amount){
+
+    public void earn_money(int amount) {
         this.money = this.money + amount;
     }
 
-    
+
     public void drawTemplate() {
         SaxionApp.turnBorderOn();
         SaxionApp.turnFillOff();
@@ -67,7 +69,7 @@ public class player {
 
         //draw burnout meter
         SaxionApp.turnFillOn();
-        SaxionApp.drawText("Progress", 1600, 1000,30);
+        SaxionApp.drawText("Progress", 1600, 1000, 30);
 
         //draw time and date
 

@@ -31,7 +31,7 @@ public class Application implements Runnable {
 
             while (player.getBurnout() != 100 && player.getBurnout() != 0) {
             player.drawTemplate();
-
+            SaxionApp.readChar();
             }
 
             SaxionApp.drawBorderedText("congratulations, you made it out of your burnout", xmiddle, ymiddle, 20);
