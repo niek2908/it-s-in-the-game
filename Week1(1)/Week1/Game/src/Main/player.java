@@ -1,5 +1,9 @@
 package Main;
 
+import nl.saxion.app.SaxionApp;
+
+import java.awt.*;
+
 public class player {
     private int burnout;
     private int level;
@@ -12,6 +16,7 @@ public class player {
     }
     public  player(int difficulty){
 
+        this.difficulty = difficulty;
     }
     public int getTime(){
         return time;
@@ -38,5 +43,13 @@ public class player {
 
     public void setLevel(int level) {
         this.level = level;
+    }
+
+
+    public void drawTemplate(Scenario scenario) {
+        SaxionApp.turnFillOff();
+        SaxionApp.turnBorderOff();
+        SaxionApp.setBorderColor(Color.black);
+        SaxionApp.drawRectangle(50, 50, 1750, 650);
     }
 }
