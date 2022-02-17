@@ -64,6 +64,8 @@ public class player {
 
         //draw burnout meter
 
+        SaxionApp.drawText("Progress", 1600, 1000,30);
+
         //draw time and date
 
         //draw money
