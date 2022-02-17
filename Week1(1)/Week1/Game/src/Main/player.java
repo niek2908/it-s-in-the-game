@@ -8,7 +8,7 @@ import nl.saxion.app.CsvReader;
 
 public class player {
     private int burnout;
-    private int level;
+     int level;
     private int difficulty;
     private int time;
 
