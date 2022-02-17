@@ -29,7 +29,8 @@ public class Application implements Runnable {
         player player = new player(difficulty);
         SaxionApp.clear();
         while (player.getBurnout() != 0) {
-
+            Scenario scenario = new Scenario();
+            player.drawTemplate(scenario);
         }
 
         SaxionApp.drawBorderedText("congratulations, you made it out of your burnout", xmiddle, ymiddle, 20);

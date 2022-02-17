@@ -7,7 +7,7 @@ import java.awt.*;
 import nl.saxion.app.CsvReader;
 
 public class player {
-    private int burnout;
+    private int burnout = 10;
     int level;
     private int difficulty;
     private int time;
@@ -66,7 +66,7 @@ public class player {
         SaxionApp.drawRectangle(50, 50, 1750, 650);
 
         //draw burnout meter
-
+        SaxionApp.turnFillOn();
         SaxionApp.drawText("Progress", 1600, 1000,30);
 
         //draw time and date
