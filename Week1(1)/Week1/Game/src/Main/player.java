@@ -83,6 +83,13 @@ public class player {
 
         //draw money
         SaxionApp.drawText("Money: €" + money,50,780,20);
+
+        //outline textboxes
+        SaxionApp.turnFillOff();
+        SaxionApp.drawRectangle(270,780,575,50);
+        SaxionApp.drawRectangle(270,880,575,50);
+        SaxionApp.drawRectangle(895,780,575,50);
+        SaxionApp.drawRectangle(895,880,575,50);
     }
 }
 
