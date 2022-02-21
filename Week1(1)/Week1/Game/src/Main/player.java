@@ -9,7 +9,7 @@ import nl.saxion.app.CsvReader;
 public class player {
 
     private int burnout = 10;
-    int level;
+    int location;
     private int difficulty;
     private int time = 14;
     private int day = 0;
@@ -17,6 +17,10 @@ public class player {
 
     public int getDifficulty() {
         return difficulty;
+    }
+
+    public void setBurnout(int burnout) {
+        this.burnout = burnout;
     }
 
     public player(int difficulty) {
@@ -37,7 +41,7 @@ public class player {
     }
 
     public int getLevel() {
-        return level;
+        return location;
     }
 
     public void increaseBurnout(int amount) {
@@ -49,7 +53,7 @@ public class player {
     }
 
     public void setLevel(int level) {
-        this.level = level;
+        this.location = level;
     }
 
     public void pay(int amount) {

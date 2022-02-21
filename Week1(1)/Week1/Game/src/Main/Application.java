@@ -18,10 +18,18 @@ public class Application implements Runnable {
         int ymiddle = height / 2;
         SaxionApp.resize(width, height);
         ArrayList<Scenario> scenariolist = new ArrayList<>();
-        CsvReader scenarios = new CsvReader("Week1(1)/Week1/Game/src/Main/Scenario.java");
+        CsvReader scenarios = new CsvReader("Week1(1)/Week1/Game/src/Main/Scenario.csv");
+        scenarios.skipRow();
+        scenarios.setSeparator(',');
         while (scenarios.loadRow()) {
             Scenario temp = new Scenario();
-
+            temp.question = scenarios.getString(0);
+            temp.answer1 = scenarios.getString(1);
+            temp.answer2 = scenarios.getString(2);
+            temp.answer3 = scenarios.getString(3);
+            temp.answer4 = scenarios.getString(4);
+            temp.location = scenarios.getString(5);
+            temp.money = scenarios.getInt(6);
             scenariolist.add(temp);
         }
 
@@ -30,8 +38,15 @@ public class Application implements Runnable {
         SaxionApp.clear();
 
             while (player.getBurnout() != 100 && player.getBurnout() != 0) {
+                if (player.getBurnout() > 100){
+                    player.setBurnout(100);
+                }
+                else if (player.getBurnout() < 0){
+                    player.setBurnout(0);
+                }
             player.drawTemplate();
             SaxionApp.readChar();
+
             }
 
             SaxionApp.drawBorderedText("congratulations, you made it out of your burnout", xmiddle, ymiddle, 20);
