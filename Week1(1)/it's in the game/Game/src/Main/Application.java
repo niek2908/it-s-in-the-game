@@ -18,7 +18,7 @@ public class Application implements Runnable {
         int ymiddle = height / 2;
         SaxionApp.resize(width, height);
         ArrayList<Scenario> scenariolist = new ArrayList<>();
-        CsvReader scenarios = new CsvReader("Week1(1)/Week1/Game/src/Main/Scenario.csv");
+        CsvReader scenarios = new CsvReader("Week1(1)/it's in the game/Game/src/Main/scenario.csv");
         scenarios.skipRow();
         scenarios.setSeparator(',');
         while (scenarios.loadRow()) {
