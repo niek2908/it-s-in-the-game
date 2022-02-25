@@ -37,35 +37,48 @@ public class Application implements Runnable {
         player player = new player(difficulty);
         SaxionApp.clear();
 
-            while (player.getBurnout() != 100 && player.getBurnout() != 0) {
-                if (player.getBurnout() > 100){
-                    player.setBurnout(100);
-                }
-                else if (player.getBurnout() < 0){
-                    player.setBurnout(0);
-                }
+        while (player.getBurnout() != 100 && player.getBurnout() != 0) {
+            if (player.getBurnout() > 100) {
+                player.setBurnout(100);
+            } else if (player.getBurnout() < 0) {
+                player.setBurnout(0);
+            }
             player.drawTemplate();
             SaxionApp.readChar();
 
-            }
-
-            SaxionApp.drawBorderedText("congratulations, you made it out of your burnout", xmiddle, ymiddle, 20);
         }
+
+        SaxionApp.drawBorderedText("congratulations, you made it out of your burnout", xmiddle, ymiddle, 20);
+    }
 
 
     public int init(int xmiddle, int ymiddle) {
-SaxionApp.setBackgroundColor(Color.white);
+        SaxionApp.setBackgroundColor(Color.white);
         SaxionApp.setFill(Color.black);
         SaxionApp.turnBorderOff();
         SaxionApp.drawBorderedText("to get to the next screen press a key", xmiddle, ymiddle, 20);
         SaxionApp.readChar();
         SaxionApp.clear();
-        SaxionApp.printLine("please select a difficulty setting",Color.black);
-        SaxionApp.printLine("1: easy",Color.black);
-        SaxionApp.printLine("2: medium",Color.black);
-        SaxionApp.printLine("3: hard",Color.black);
+        SaxionApp.printLine("please select a difficulty setting", Color.black);
+        SaxionApp.printLine("1: easy", Color.black);
+        SaxionApp.printLine("2: medium", Color.black);
+        SaxionApp.printLine("3: hard", Color.black);
 
         return SaxionApp.readInt();
+
+    }
+
+    public Scenario GetRandomScenario(String location, ArrayList<Scenario> Scenariolist) {
+        ArrayList<Scenario> temp = new ArrayList<>();// creates a temporary arraylist to load the needed scenario's in
+        for (Scenario s : Scenariolist) {// loads the needed scenarios in the arraylist
+            if (s.location == location) {
+                temp.add(s);
+            }
+        }
+        if (temp.size() == 0) {// checks to see if there are any entries in the list
+            return null;
+        } else
+            return (temp.get(SaxionApp.getRandomValueBetween(0, temp.size())));
 
     }
 }
