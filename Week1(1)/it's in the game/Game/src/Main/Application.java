@@ -5,6 +5,7 @@ import nl.saxion.app.SaxionApp;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Application implements Runnable {
     public static void main(String[] args) {
@@ -71,7 +72,7 @@ public class Application implements Runnable {
     public Scenario GetRandomScenario(String location, ArrayList<Scenario> Scenariolist) {
         ArrayList<Scenario> temp = new ArrayList<>();// creates a temporary arraylist to load the needed scenario's in
         for (Scenario s : Scenariolist) {// loads the needed scenarios in the arraylist
-            if (s.location == location) {
+            if (Objects.equals(s.location, location)) { // checks to see if the current scenario matches the current location of the player
                 temp.add(s);
             }
         }
