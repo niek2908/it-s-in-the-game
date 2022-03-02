@@ -49,7 +49,7 @@ public class methods {
                     player.decreaseBurnout(1);
                     break;
                 case 4:
-                    player.location = "badkamer";
+                    player.location = "thuis";
                     break;
             }
             SaxionApp.clear();
