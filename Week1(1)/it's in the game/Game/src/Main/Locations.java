@@ -7,6 +7,7 @@ public class Locations {
 
     public void thuis(player player) {
         if (player.location == "thuis") {
+            SaxionApp.clear();
             player.drawTemplate();
             SaxionApp.drawText("1) go to the kitchen", 275, 785, 20);
             SaxionApp.drawText("2) go to the bedroom", 275, 885, 20);
@@ -16,16 +17,19 @@ public class Locations {
             switch (SaxionApp.readChar()) {
                 case 1:
                     player.location = "keuken";
-                    SaxionApp.clear();
                     keuken(player);
-                    break;
+
                 case 2:
                     player.location = "slaapkamer";
+                    slaapkamer(player);
                     break;
                 case 3:
                     player.location = "woonkamer";
+                    woonkamer(player);
+                    break;
                 case 4:
                     player.location = "badkamer";
+                    badkamer(player);
                     break;
 
             }
@@ -33,12 +37,13 @@ public class Locations {
         else {
             throw new IllegalStateException("you aren't in the hallway");
         }
-        SaxionApp.clear();
+
     }
 
 
     public void keuken(player player) {
         if (player.location == "keuken") {
+            SaxionApp.clear();
             player.drawTemplate();
             SaxionApp.drawText("1) have a glass of water", 275, 785, 20);
             SaxionApp.drawText("2) have some food", 275, 885, 20);
@@ -61,7 +66,6 @@ public class Locations {
                     player.location = "thuis";
                     break;
             }
-            SaxionApp.clear();
         } else {
             throw new IllegalStateException("you aren't in the kitchen");
         }
@@ -70,6 +74,7 @@ public class Locations {
 
     public void slaapkamer(player player) {
         if (player.location == "slaapkamer") {
+            SaxionApp.clear();
             player.drawTemplate();
             SaxionApp.drawText("1) take a nap", 275, 785, 20);
             SaxionApp.drawText("2) meditate", 275, 885, 20);
@@ -91,7 +96,6 @@ public class Locations {
                     player.location = "thuis";
                     break;
             }
-            SaxionApp.clear();
         } else {
             throw new IllegalStateException("you aren't in the bedroom");
         }
@@ -101,6 +105,7 @@ public class Locations {
 
     public void woonkamer(player player) {
         if (player.location == "woonkamer") {
+            SaxionApp.clear();
             player.drawTemplate();
             SaxionApp.drawText("1) watch some tv", 275, 785, 20);
             SaxionApp.drawText("2) invite some friends over", 275, 885, 20);
@@ -123,7 +128,6 @@ public class Locations {
                     player.location = "thuis";
                     break;
             }
-            SaxionApp.clear();
         } else {
             throw new IllegalStateException("you aren't in the living room");
         }
@@ -131,6 +135,7 @@ public class Locations {
 
     public void badkamer(player player) {
         if (player.location == "badkamer") {
+            SaxionApp.clear();
             player.drawTemplate();
             SaxionApp.drawText("1) take a long shower", 275, 785, 20);
             SaxionApp.drawText("2) wash your face", 275, 885, 20);
@@ -152,17 +157,19 @@ public class Locations {
                     player.location = "slaapkamer";
                     break;
             }
-            SaxionApp.clear();
+
         } else {
             throw new IllegalStateException("you aren't in the bathroom");
         }
     }
 
     public void supermarkt(player player) {
+        SaxionApp.clear();
         SaxionApp.drawBorderedText("you went to get groceries and restocked the fride",player.xmiddle, player.ymiddle, 20);
         player.decreaseBurnout(4);
         player.turn(player);
         player.turn(player);
+        busstation(player);
     }
 
     public void cafe(player player) {
@@ -170,6 +177,8 @@ public class Locations {
 
     public void kledingwinkel(player player) {
     }
-
+public void busstation(player player){
+    SaxionApp.clear();
+}
 
 }
