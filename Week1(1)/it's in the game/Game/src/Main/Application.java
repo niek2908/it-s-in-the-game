@@ -13,6 +13,7 @@ public class Application implements Runnable {
     }
 
     public void run(){
+        Locations move = new Locations();
         int width = 1900;
         int height = 1000;
         int xmiddle = width / 2;
@@ -45,6 +46,7 @@ public class Application implements Runnable {
                 player.setBurnout(0);
             }
             player.drawTemplate();
+            move.thuis(player);
             SaxionApp.readChar();
 
         }
