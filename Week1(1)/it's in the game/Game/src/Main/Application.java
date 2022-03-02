@@ -12,7 +12,7 @@ public class Application implements Runnable {
         SaxionApp.start(new Application(), 1900, 1000);
     }
 
-    public void run() {
+    public void run(){
         int width = 1900;
         int height = 1000;
         int xmiddle = width / 2;
@@ -35,7 +35,7 @@ public class Application implements Runnable {
         }
 
         int difficulty = init(xmiddle, ymiddle);
-        player player = new player(difficulty);
+        player player = new player(difficulty , xmiddle,ymiddle);
         SaxionApp.clear();
 
         while (player.getBurnout() != 100 && player.getBurnout() != 0) {

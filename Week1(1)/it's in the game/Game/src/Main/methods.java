@@ -32,13 +32,36 @@ public class methods {
         if (player.location == "keuken") {
             player.drawTemplate();
             SaxionApp.drawText("1) neem een glas water", 275, 785, 10);
-            SaxionApp.drawText("2) ", 275, 885, 10);
-            SaxionApp.drawText("3) ", 900, 785, 10);
+            SaxionApp.drawText("2) pak wat te eten", 275, 885, 10);
+            SaxionApp.drawText("3) maak een boodschappenlijstje ", 900, 785, 10);
             SaxionApp.drawText("4) ga naar de hal", 275, 885, 10);
+            switch (SaxionApp.readInt()) {
+                case 1:
+                    player.increaseBurnout(2);
+                    player.turn(player);
+                    break;
+                case 2:
+                    player.increaseBurnout(5);
+                    player.turn(player);
+                    player.turn(player);
+                    break;
+                case 3:
+                    player.decreaseBurnout(1);
+                    break;
+                case 4:
+                    player.location = "badkamer";
+                    break;
+            }
+            SaxionApp.clear();
+        }
+        else {
+            throw new IllegalStateException("je bent niet in de keuken");
         }
     }
 
+
     public void slaapkamer(player player) {
+
 
     }
 
@@ -57,5 +80,6 @@ public class methods {
 
     public void kledingwinkel(player player) {
     }
+
 
 }

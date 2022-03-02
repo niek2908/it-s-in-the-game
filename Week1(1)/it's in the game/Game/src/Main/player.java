@@ -6,7 +6,7 @@ import java.awt.*;
 
 import nl.saxion.app.CsvReader;
 
-public class player {
+public class player  {
 
     private int burnout = 10;
     String location;
@@ -14,6 +14,8 @@ public class player {
     private int time = 14;
     private int day = 0;
     private int money = 500;
+    int xmiddle;
+    int ymiddle;
 
     public int getDifficulty() {
         return difficulty;
@@ -23,7 +25,7 @@ public class player {
         this.burnout = burnout;
     }
 
-    public player(int difficulty) {
+    public player(int difficulty , int xmiddle, int ymiddle) {
 
         this.difficulty = difficulty;
     }
@@ -47,6 +49,7 @@ public class player {
     public void increaseBurnout(int amount) {
         burnout = this.burnout + amount * difficulty;
     }
+    public void decreaseBurnout(int amount){burnout = this.burnout - amount;}
 
     public void lowerBurnout(int amount) {
         burnout = this.burnout - amount * difficulty;
@@ -60,7 +63,14 @@ public class player {
         this.money = this.money - amount;
 
     }
-
+        public void turn(player player){
+        if (time == 22){
+            time = 10;
+            day++;
+            SaxionApp.drawBorderedText("congratulations, you made it out of your burnout",xmiddle, ymiddle, 20);
+        }
+        time = this.time + 1;
+        }
     public void earn_money(int amount) {
         this.money = this.money + amount;
     }
