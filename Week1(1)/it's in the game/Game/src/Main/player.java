@@ -31,6 +31,14 @@ public class player  {
         this.difficulty = difficulty;
     }
 
+    public int getMoney(){
+        return money;
+    }
+
+    public int getDay(){
+        return day;
+    }
+
     public int getTime() {
         return time;
     }
