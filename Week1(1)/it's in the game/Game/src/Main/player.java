@@ -9,13 +9,14 @@ import nl.saxion.app.CsvReader;
 public class player  {
 
     private int burnout = 10;
-    String location;
+    String location = "thuis";
     private int difficulty;
     private int time = 14;
     private int day = 0;
     private int money = 500;
     int xmiddle;
     int ymiddle;
+    int timesworked = 0;
 
     public int getDifficulty() {
         return difficulty;
@@ -28,6 +29,14 @@ public class player  {
     public player(int difficulty , int xmiddle, int ymiddle) {
 
         this.difficulty = difficulty;
+    }
+
+    public int getMoney(){
+        return money;
+    }
+
+    public int getDay(){
+        return day;
     }
 
     public int getTime() {
@@ -67,12 +76,20 @@ public class player  {
         if (time == 22){
             time = 10;
             day++;
-            SaxionApp.drawBorderedText("congratulations, you made it out of your burnout",xmiddle, ymiddle, 20);
+            SaxionApp.drawBorderedText("you went to sleep, and awoke on a new day",xmiddle, ymiddle, 20);
+            if (day % 5 == 0){
+                money = this.money + (10*timesworked);
+            }
         }
         time = this.time + 1;
         }
-    public void earn_money(int amount) {
-        this.money = this.money + amount;
+    public void work(player player){
+        if (player.location  == "woonkamer"){
+            player.turn(player);
+            player.turn(player);
+            timesworked++;
+            player.decreaseBurnout(5);
+        }
     }
 
 
