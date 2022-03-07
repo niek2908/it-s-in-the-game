@@ -3,6 +3,10 @@ package Main;
 import nl.saxion.app.SaxionApp;
 
 import java.awt.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 import nl.saxion.app.CsvReader;
 
@@ -121,6 +125,63 @@ public class player  {
         SaxionApp.drawRectangle(270,880,575,50);
         SaxionApp.drawRectangle(895,780,575,50);
         SaxionApp.drawRectangle(895,880,575,50);
+    }
+
+    public void save(){
+        int saveChoice = SaxionApp.readInt();
+        if (saveChoice == 8) {
+            try {
+                String score1 = String.valueOf(getBurnout());
+                String geld1 = String.valueOf(getMoney());
+                String tijd1 = String.valueOf(getTime());
+                String dag1 = String.valueOf(getDay());
+
+                File file = new File("Week1(1)/it's in the game/Game/src/Main/save1.csv");
+
+                FileWriter fw = new FileWriter(file.getAbsoluteFile());
+                BufferedWriter bw = new BufferedWriter(fw);
+                bw.write("score,geld,tijd,dag");
+                bw.newLine();
+                bw.write(score1);
+                bw.write(',');
+                bw.write(geld1);
+                bw.write(',');
+                bw.write(tijd1);
+                bw.write(',');
+                bw.write(dag1);
+                bw.close();
+
+                System.out.println("Done");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else if (saveChoice == 9) {
+            try {
+                String score2 = String.valueOf(getBurnout());
+                String geld2 = String.valueOf(getMoney());
+                String tijd2 = String.valueOf(getTime());
+                String dag2 = String.valueOf(getDay());
+
+                File file = new File("Week1(1)/it's in the game/Game/src/Main/save2.csv");
+
+                FileWriter fw = new FileWriter(file.getAbsoluteFile());
+                BufferedWriter bw = new BufferedWriter(fw);
+                bw.write("score,geld,tijd,dag");
+                bw.newLine();
+                bw.write(score2);
+                bw.write(',');
+                bw.write(geld2);
+                bw.write(',');
+                bw.write(tijd2);
+                bw.write(',');
+                bw.write(dag2);
+                bw.close();
+
+                System.out.println("Done");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
 

@@ -52,60 +52,7 @@ public class Application implements Runnable {
             play(player, move);
 
             //Keuzemenu voor save en save optie
-            int saveChoice = SaxionApp.readInt();
-            if (saveChoice == 8) {
-                try {
-                    String score1 = String.valueOf(player.getBurnout());
-                    String geld1 = String.valueOf(player.getMoney());
-                    String tijd1 = String.valueOf(player.getTime());
-                    String dag1 = String.valueOf(player.getDay());
 
-                    File file = new File("Week1(1)/it's in the game/Game/src/Main/save1.csv");
-
-                    FileWriter fw = new FileWriter(file.getAbsoluteFile());
-                    BufferedWriter bw = new BufferedWriter(fw);
-                    bw.write("score,geld,tijd,dag");
-                    bw.newLine();
-                    bw.write(score1);
-                    bw.write(',');
-                    bw.write(geld1);
-                    bw.write(',');
-                    bw.write(tijd1);
-                    bw.write(',');
-                    bw.write(dag1);
-                    bw.close();
-
-                    System.out.println("Done");
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            } else if (saveChoice == 9) {
-                try {
-                    String score2 = String.valueOf(player.getBurnout());
-                    String geld2 = String.valueOf(player.getMoney());
-                    String tijd2 = String.valueOf(player.getTime());
-                    String dag2 = String.valueOf(player.getDay());
-
-                    File file = new File("Week1(1)/it's in the game/Game/src/Main/save2.csv");
-
-                    FileWriter fw = new FileWriter(file.getAbsoluteFile());
-                    BufferedWriter bw = new BufferedWriter(fw);
-                    bw.write("score,geld,tijd,dag");
-                    bw.newLine();
-                    bw.write(score2);
-                    bw.write(',');
-                    bw.write(geld2);
-                    bw.write(',');
-                    bw.write(tijd2);
-                    bw.write(',');
-                    bw.write(dag2);
-                    bw.close();
-
-                    System.out.println("Done");
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
 
         }
 
