@@ -39,6 +39,7 @@ public class Application implements Runnable {
             scenariolist.add(temp);
         }
 
+
         int difficulty = init(xmiddle, ymiddle);
         player player = new player(difficulty, xmiddle, ymiddle);
         SaxionApp.clear();

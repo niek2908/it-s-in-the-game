@@ -3,6 +3,13 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
+        <entry key="\Week1(1)\it's in the game\Game\src\Main\characters.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\Week1(1)\it's in the game\Game\src\Main\locations.csv">
           <value>
             <Attribute>
@@ -18,6 +25,13 @@
           </value>
         </entry>
         <entry key="\Week1(1)\it's in the game\Game\src\Main\save2.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Week1(1)\it's in the game\Game\src\Main\scenario.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

@@ -123,10 +123,11 @@ public class Locations {
             if (check(player)) {
                 SaxionApp.clear();
                 player.drawTemplate();
-                SaxionApp.drawText("1) watch some tv", 275, 785, 20);
-                SaxionApp.drawText("2) invite some friends over", 275, 885, 20);
-                SaxionApp.drawText("3) work ", 900, 785, 20);
-                SaxionApp.drawText("4) go to the hallway", 900, 885, 20);
+                SaxionApp.drawText("1) Watch some tv", 275, 785, 20);
+                SaxionApp.drawText("2) Invite some friends over", 275, 885, 20);
+                SaxionApp.drawText("3) Work ", 900, 785, 20);
+                SaxionApp.drawText("4) Go to the hallway", 900, 885, 20);
+                SaxionApp.drawImage("Week1(1)/it's in the game/Game/src/Main/art/woonkamer-pixilart (2).png",50,50,1750,650);
                 switch (SaxionApp.readChar()) {
                     case '1':
                         player.increaseBurnout(2);
