@@ -117,7 +117,36 @@ public class Locations {
 
 
     }
+    public void busstation(player player){
+        if (player.location == "woonkamer") {
+            SaxionApp.clear();
+            player.drawTemplate();
+            SaxionApp.drawText("1) go the clothes store", 275, 785, 20);
+            SaxionApp.drawText("2) go to the cafe", 275, 885, 20);
+            SaxionApp.drawText("3) go to the supermarket ", 900, 785, 20);
+            SaxionApp.drawText("4) go home", 900, 885, 20);
+            switch (SaxionApp.readChar()) {
+                case 1:
+                    player.increaseBurnout(2);
+                    player.turn(player);
+                    break;
+                case 2:
+                    player.increaseBurnout(5);
+                    player.turn(player);
+                    player.turn(player);
+                    break;
+                case 3:
+                    player.work(player);
+                    break;
+                case 4:
+                    player.location = "thuis";
+                    break;
+            }
+        } else {
+            throw new IllegalStateException("you aren't in the living room");
+        }
 
+    }
     public void woonkamer(player player) {
         if (player.location == "woonkamer") {
             if (check(player)) {
@@ -192,7 +221,7 @@ public class Locations {
 
     public void supermarkt(player player) {
         SaxionApp.clear();
-        SaxionApp.drawBorderedText("you went to get groceries and restocked the fride", player.xmiddle, player.ymiddle, 20);
+        SaxionApp.drawBorderedText("you went to get groceries and restocked the fridge",player.xmiddle, player.ymiddle, 20);
         player.decreaseBurnout(4);
         player.turn(player);
         player.turn(player);
@@ -205,19 +234,12 @@ public class Locations {
 
     public void kledingwinkel(player player) {
     }
-
-    public void busstation(player player) {
-        SaxionApp.clear();
-    }
-
-
-    private boolean check(player player) {
-        if (player.getBurnout() > 99 || player.getBurnout() < 0) {
+public boolean check(player player){
+        if (player.getBurnout() > 99){
             return false;
-        } else {
-            return true;
         }
+        else return true;
 
-    }
+}
 
 }
