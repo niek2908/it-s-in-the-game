@@ -2,9 +2,12 @@ package Main;
 
 import nl.saxion.app.SaxionApp;
 
+import java.util.ArrayList;
+
 
 public class Locations {
-    public void thuis(player player) {
+    String[] actions = {null,null,null,null};
+    public void thuis(player player){
         if (player.location == "thuis") {
             if (check(player)) {
                 SaxionApp.clear();
@@ -162,8 +165,7 @@ public class Locations {
                 SaxionApp.drawText("2) Invite some friends over", 275, 885, 20);
                 SaxionApp.drawText("3) Work ", 900, 785, 20);
                 SaxionApp.drawText("4) Go to the hallway", 900, 885, 20);
-                SaxionApp.drawImage("Week1(1)/it's in the game/Game/src/Main/art/woonkamer-pixilart (2).png",50,50,1750,650);
-                character();
+                SaxionApp.drawImage("Week1(1)/it's in the game/Game/src/Main/art/woonkamer-pixilart (2).png", 50, 50, 1750, 650);
                 switch (SaxionApp.readChar()) {
                     case '1':
                         player.increaseBurnout(2);
@@ -243,11 +245,14 @@ public class Locations {
 
     public void kledingwinkel(player player) {
     }
-public boolean check(player player){
-        if (player.getBurnout() > 99){
-            return false;
-        }
-        else return true;
+
+    public void busstation(player player) {
+        SaxionApp.clear();
+    }
+
+
+    private boolean check(player player) {
+        return player.getBurnout() <= 99 && player.getBurnout() >= 0;
 
 }
 
