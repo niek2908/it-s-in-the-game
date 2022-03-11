@@ -52,12 +52,10 @@ public class Application implements Runnable {
             }
             play(player, move);
 
-            //Keuzemenu voor save en save optie
-
-
         }
+        SaxionApp.clear();
 
-        SaxionApp.drawBorderedText("congratulations, you made it out of your burnout", xmiddle, ymiddle, 20);
+        SaxionApp.drawBorderedText("Congratulations, you made it out of your burnout!", 550, ymiddle, 40);
     }
 
 

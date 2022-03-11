@@ -4,8 +4,6 @@ import nl.saxion.app.SaxionApp;
 
 
 public class Locations {
-
-
     public void thuis(player player) {
         if (player.location == "thuis") {
             if (check(player)) {
@@ -15,7 +13,7 @@ public class Locations {
                 SaxionApp.drawText("2) go to the bedroom", 275, 885, 20);
                 SaxionApp.drawText("3) go to the living room", 900, 785, 20);
                 SaxionApp.drawText("4) go to the mall", 900, 885, 20);
-
+                character();
                 switch (SaxionApp.readChar()) {
                     case '1':
                         player.location = "keuken";
@@ -43,6 +41,11 @@ public class Locations {
 
     }
 
+    public void character(){
+        //Draw character
+        SaxionApp.drawImage("Week1(1)/it's in the game/Game/src/Main/art/character-1-pixilart (1).png", 1300,300,400,400);
+    }
+
 
     public void keuken(player player) {
         if (player.location == "keuken") {
@@ -53,6 +56,7 @@ public class Locations {
                 SaxionApp.drawText("2) have some food", 275, 885, 20);
                 SaxionApp.drawText("3) make a shopping list ", 900, 785, 20);
                 SaxionApp.drawText("4) go to the hallway", 900, 885, 20);
+                character();
                 switch (SaxionApp.readChar()) {
                     case '1':
                         player.increaseBurnout(2);
@@ -90,6 +94,7 @@ public class Locations {
                 SaxionApp.drawText("2) meditate", 275, 885, 20);
                 SaxionApp.drawText("3) go to the bathroom ", 900, 785, 20);
                 SaxionApp.drawText("4) go to the hallway", 900, 885, 20);
+                character();
                 switch (SaxionApp.readChar()) {
                     case '1':
                         player.increaseBurnout(2);
@@ -125,6 +130,7 @@ public class Locations {
             SaxionApp.drawText("2) go to the cafe", 275, 885, 20);
             SaxionApp.drawText("3) go to the supermarket ", 900, 785, 20);
             SaxionApp.drawText("4) go home", 900, 885, 20);
+            character();
             switch (SaxionApp.readChar()) {
                 case 1:
                     player.increaseBurnout(2);
@@ -157,6 +163,7 @@ public class Locations {
                 SaxionApp.drawText("3) Work ", 900, 785, 20);
                 SaxionApp.drawText("4) Go to the hallway", 900, 885, 20);
                 SaxionApp.drawImage("Week1(1)/it's in the game/Game/src/Main/art/woonkamer-pixilart (2).png",50,50,1750,650);
+                character();
                 switch (SaxionApp.readChar()) {
                     case '1':
                         player.increaseBurnout(2);
@@ -193,6 +200,7 @@ public class Locations {
                 SaxionApp.drawText("2) wash your face", 275, 885, 20);
                 SaxionApp.drawText("3) clean the bathroom ", 900, 785, 20);
                 SaxionApp.drawText("4) go to the bedroom", 900, 885, 20);
+                character();
                 switch (SaxionApp.readChar()) {
                     case '1':
                         player.increaseBurnout(2);
