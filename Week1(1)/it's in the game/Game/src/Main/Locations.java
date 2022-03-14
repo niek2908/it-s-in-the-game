@@ -168,7 +168,10 @@ public class Locations {
                 SaxionApp.drawText("2) Invite some friends over", 275, 885, 20);
                 SaxionApp.drawText("3) Work ", 900, 785, 20);
                 SaxionApp.drawText("4) Go to the hallway", 900, 885, 20);
+<<<<<<< HEAD
                 SaxionApp.drawImage("Week1(1)/it's in the game/Game/src/Main/art/woonkamer-pixilart (2).png", 50, 50, 1750, 650);
+=======
+>>>>>>> main
                 character();
                 switch (SaxionApp.readChar()) {
                     case '1':
@@ -251,6 +254,7 @@ public class Locations {
     }
 
     
+
 
 
     private boolean check(player player) {
