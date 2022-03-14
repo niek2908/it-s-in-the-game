@@ -128,7 +128,7 @@ public class Locations {
     }
 
     public void busstation(player player) {
-        if (player.location == "woonkamer") {
+        if (player.location == "busstop") {
             SaxionApp.clear();
             player.drawTemplate();
             SaxionApp.drawText("1) go the clothes store", 275, 785, 20);
@@ -138,23 +138,21 @@ public class Locations {
             character();
             switch (SaxionApp.readChar()) {
                 case 1:
-                    player.increaseBurnout(2);
-                    player.turn(player);
+                    kledingwinkel(player);
                     break;
                 case 2:
-                    player.increaseBurnout(5);
-                    player.turn(player);
-                    player.turn(player);
+                    cafe(player);
                     break;
                 case 3:
-                    player.work(player);
+                    supermarkt(player);
                     break;
                 case 4:
                     player.location = "thuis";
+                    thuis(player);
                     break;
             }
         } else {
-            throw new IllegalStateException("you aren't in the living room");
+            throw new IllegalStateException("you aren't in the busstop");
         }
 
     }
