@@ -169,6 +169,7 @@ public class Locations {
                 SaxionApp.drawText("3) Work ", 900, 785, 20);
                 SaxionApp.drawText("4) Go to the hallway", 900, 885, 20);
                 SaxionApp.drawImage("Week1(1)/it's in the game/Game/src/Main/art/woonkamer-pixilart (2).png", 50, 50, 1750, 650);
+                character();
                 switch (SaxionApp.readChar()) {
                     case '1':
                         player.increaseBurnout(2);
