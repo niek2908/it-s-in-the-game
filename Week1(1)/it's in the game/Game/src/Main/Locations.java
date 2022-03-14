@@ -6,8 +6,9 @@ import java.util.ArrayList;
 
 
 public class Locations {
-    String[] actions = {null,null,null,null};
-    public void thuis(player player){
+    String[] actions = {null, null, null, null};
+
+    public void thuis(player player) {
         if (player.location == "thuis") {
             if (check(player)) {
                 SaxionApp.clear();
@@ -44,9 +45,9 @@ public class Locations {
 
     }
 
-    public void character(){
+    public void character() {
         //Draw character
-        SaxionApp.drawImage("Week1(1)/it's in the game/Game/src/Main/art/character-1-pixilart (1).png", 1300,300,400,400);
+        SaxionApp.drawImage("Week1(1)/it's in the game/Game/src/Main/art/character-1-pixilart (1).png", 1300, 300, 400, 400);
     }
 
 
@@ -125,7 +126,8 @@ public class Locations {
 
 
     }
-    public void busstation(player player){
+
+    public void busstation(player player) {
         if (player.location == "woonkamer") {
             SaxionApp.clear();
             player.drawTemplate();
@@ -156,6 +158,7 @@ public class Locations {
         }
 
     }
+
     public void woonkamer(player player) {
         if (player.location == "woonkamer") {
             if (check(player)) {
@@ -165,7 +168,7 @@ public class Locations {
                 SaxionApp.drawText("2) Invite some friends over", 275, 885, 20);
                 SaxionApp.drawText("3) Work ", 900, 785, 20);
                 SaxionApp.drawText("4) Go to the hallway", 900, 885, 20);
-                SaxionApp.drawImage("Week1(1)/it's in the game/Game/src/Main/art/woonkamer-pixilart (2).png", 50, 50, 1750, 650);
+                character();
                 switch (SaxionApp.readChar()) {
                     case '1':
                         player.increaseBurnout(2);
@@ -232,7 +235,7 @@ public class Locations {
 
     public void supermarkt(player player) {
         SaxionApp.clear();
-        SaxionApp.drawBorderedText("you went to get groceries and restocked the fridge",player.xmiddle, player.ymiddle, 20);
+        SaxionApp.drawBorderedText("you went to get groceries and restocked the fridge", player.xmiddle, player.ymiddle, 20);
         player.decreaseBurnout(4);
         player.turn(player);
         player.turn(player);
@@ -246,14 +249,12 @@ public class Locations {
     public void kledingwinkel(player player) {
     }
 
-    public void busstation(player player) {
-        SaxionApp.clear();
-    }
+
 
 
     private boolean check(player player) {
         return player.getBurnout() <= 99 && player.getBurnout() >= 0;
 
-}
+    }
 
 }
