@@ -246,6 +246,8 @@ public class Locations {
     }
 
     public void cafe(player player) {
+        SaxionApp.drawImage("Week1(1)/it's in the game/Game/src/Main/art/bar-background-pixilart (3).png", 50, 50, 1750, 650);
+        character();
     }
 
     public void kledingwinkel(player player) {
