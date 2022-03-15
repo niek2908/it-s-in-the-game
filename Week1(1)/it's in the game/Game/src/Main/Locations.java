@@ -60,6 +60,7 @@ public class Locations {
                 SaxionApp.drawText("2) have some food", 275, 885, 20);
                 SaxionApp.drawText("3) make a shopping list ", 900, 785, 20);
                 SaxionApp.drawText("4) go to the hallway", 900, 885, 20);
+                SaxionApp.drawImage("Week1(1)/it's in the game/Game/src/Main/art/pixilart-drawing.png",50, 50, 1750, 650);
                 character();
                 switch (SaxionApp.readChar()) {
                     case '1':
