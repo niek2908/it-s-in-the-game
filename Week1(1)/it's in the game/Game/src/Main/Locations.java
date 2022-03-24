@@ -261,7 +261,7 @@ public class Locations {
 
 
     private boolean check(player player) {
-        return player.getBurnout() <= 99 && player.getBurnout() >= 0;
+        return player.getBurnout() <= 99 && player.getBurnout() >= 1;
 
     }
 

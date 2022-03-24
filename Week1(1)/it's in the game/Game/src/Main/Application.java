@@ -50,9 +50,11 @@ public class Application implements Runnable {
 
         }
         SaxionApp.clear();
-
-        SaxionApp.drawBorderedText("Congratulations, you made it out of your burnout!", 550, ymiddle, 40);
-        SaxionApp.drawImage("Week1(1)/it's in the game/Game/src/Main/art/Endscreen Win.png",0,0,1900,1000);
+        if(player.getBurnout() == 100){
+            SaxionApp.drawImage("Week1(1)/it's in the game/Game/src/Main/art/Endscreen Win.png",0,0,1900,1000);
+        }else{
+            SaxionApp.drawImage("Week1(1)/it's in the game/Game/src/Main/art/losing endscreen.png",0,0,1900,1000);
+        }
     }
 
 
@@ -64,7 +66,6 @@ public class Application implements Runnable {
         SaxionApp.readChar();
         SaxionApp.clear();
         SaxionApp.drawImage("Week1(1)/it's in the game/Game/src/Main/art/menu.png",0,0,1900,1000);
-
         return SaxionApp.readInt();
 
     }
