@@ -107,7 +107,7 @@ public class Application implements Runnable {
                 break;
             }
             case "kledingwinkel": {
-                move.kledingwinkel(player);
+                move.park(player);
                 break;
             }
         }

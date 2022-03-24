@@ -155,7 +155,7 @@ public class Locations {
             character();
             switch (SaxionApp.readChar()){
                 case '1':
-                    kledingwinkel(player);
+                    park(player);
                     break;
 
                 case '2':
@@ -292,7 +292,7 @@ public class Locations {
 
     }
 
-    public void kledingwinkel(player player) {
+    public void park(player player) {
     }
 
 
