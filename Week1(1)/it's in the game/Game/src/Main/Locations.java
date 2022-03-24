@@ -17,6 +17,7 @@ public class Locations {
                 SaxionApp.drawText("2) go to the bedroom", 275, 885, 20);
                 SaxionApp.drawText("3) go to the living room", 900, 785, 20);
                 SaxionApp.drawText("4) go to the mall", 900, 885, 20);
+                SaxionApp.drawImage("Week1(1)/it's in the game/Game/src/Main/art/hall-pixilart (1).png",50, 50, 1750, 650);
                 character();
                 switch (SaxionApp.readChar()) {
                     case '1':
@@ -137,6 +138,7 @@ public class Locations {
             SaxionApp.drawText("2) go to the cafe", 275, 885, 20);
             SaxionApp.drawText("3) go to the supermarket ", 900, 785, 20);
             SaxionApp.drawText("4) go home", 900, 885, 20);
+            SaxionApp.drawImage("Week1(1)/it's in the game/Game/src/Main/art/bushalte-pixilart.png",50, 50, 1750, 650);
             character();
             switch (SaxionApp.readChar()) {
                 case 1:
@@ -207,6 +209,7 @@ public class Locations {
                 SaxionApp.drawText("2) wash your face", 275, 885, 20);
                 SaxionApp.drawText("3) clean the bathroom ", 900, 785, 20);
                 SaxionApp.drawText("4) go to the bedroom", 900, 885, 20);
+                SaxionApp.drawImage("Week1(1)/it's in the game/Game/src/Main/art/bathroom-pixilart (1).png",50, 50, 1750, 650);
                 character();
                 switch (SaxionApp.readChar()) {
                     case '1':
