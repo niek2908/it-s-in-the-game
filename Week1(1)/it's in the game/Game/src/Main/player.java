@@ -80,7 +80,7 @@ public class player  {
         if (time == 22){
             time = 10;
             day++;
-            SaxionApp.drawBorderedText("you went to sleep, and awoke on a new day",xmiddle, ymiddle, 20);
+            SaxionApp.drawBorderedText("You went to sleep, and awoke on a new day",xmiddle, ymiddle, 20);
             if (day % 5 == 0){
                 money = this.money + (10*timesworked);
             }

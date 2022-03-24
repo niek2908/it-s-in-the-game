@@ -50,9 +50,11 @@ public class Application implements Runnable {
 
         }
         SaxionApp.clear();
-
-        SaxionApp.drawBorderedText("Congratulations, you made it out of your burnout!", 550, ymiddle, 40);
-        SaxionApp.drawImage("Week1(1)/it's in the game/Game/src/Main/art/Endscreen Win.png",0,0,1900,1000);
+        if(player.getBurnout() == 100){
+            SaxionApp.drawImage("Week1(1)/it's in the game/Game/src/Main/art/Endscreen Win.png",0,0,1900,1000);
+        }else{
+            SaxionApp.drawImage("Week1(1)/it's in the game/Game/src/Main/art/losing endscreen.png",0,0,1900,1000);
+        }
     }
 
 
@@ -60,15 +62,11 @@ public class Application implements Runnable {
         SaxionApp.setBackgroundColor(Color.white);
         SaxionApp.setFill(Color.black);
         SaxionApp.turnBorderOff();
-        SaxionApp.drawBorderedText("to get to the next screen press a key", xmiddle, ymiddle, 20);
+        SaxionApp.drawImage("Week1(1)/it's in the game/Game/src/Main/art/beginscreen.png",0,0,1900,1000);
         SaxionApp.readChar();
         SaxionApp.clear();
-        SaxionApp.printLine("please select a difficulty setting", Color.black);
-        SaxionApp.printLine("1: easy", Color.black);
-        SaxionApp.printLine("2: medium", Color.black);
-        SaxionApp.printLine("3: hard", Color.black);
-
-        return SaxionApp.readInt();
+        SaxionApp.drawImage("Week1(1)/it's in the game/Game/src/Main/art/menu.png",0,0,1900,1000);
+        return SaxionApp.readChar();
 
     }
 
