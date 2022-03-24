@@ -66,7 +66,7 @@ public class Application implements Runnable {
         SaxionApp.readChar();
         SaxionApp.clear();
         SaxionApp.drawImage("Week1(1)/it's in the game/Game/src/Main/art/menu.png",0,0,1900,1000);
-        return SaxionApp.readChar();
+        return SaxionApp.readInt();
 
     }
 
