@@ -2,11 +2,11 @@ package Main;
 
 import nl.saxion.app.SaxionApp;
 
-import java.util.ArrayList;
+import java.beans.beancontext.BeanContext;
 
 
 public class Locations {
-    String[] actions = {null, null, null, null};
+    String[] pastActions = {"string0", "String1", "string2", "string3", "string4"};
 
     public void thuis(player player) {
         if (player.location == "thuis") {
@@ -23,7 +23,6 @@ public class Locations {
                         player.location = "keuken";
                         keuken(player);
                         break;
-
                     case '2':
                         player.location = "slaapkamer";
                         slaapkamer(player);
@@ -60,22 +59,30 @@ public class Locations {
                 SaxionApp.drawText("2) have some food", 275, 885, 20);
                 SaxionApp.drawText("3) make a shopping list ", 900, 785, 20);
                 SaxionApp.drawText("4) go to the hallway", 900, 885, 20);
-                SaxionApp.drawImage("Week1(1)/it's in the game/Game/src/Main/art/pixilart-drawing.png",50, 50, 1750, 650);
+                SaxionApp.drawImage("Week1(1)/it's in the game/Game/src/Main/art/pixilart-drawing.png", 50, 50, 1750, 650);
                 character();
                 switch (SaxionApp.readChar()) {
                     case '1':
-                        player.increaseBurnout(2);
-                        player.turn(player);
+                        if (addToActions("drink", pastActions)) {
+                            player.increaseBurnout(2);
+                            player.turn(player);
+                        }
                         keuken(player);
                         break;
                     case '2':
-                        player.increaseBurnout(5);
-                        player.turn(player);
-                        player.turn(player);
+                        if (addToActions("eat", pastActions)) {
+                            player.increaseBurnout(5);
+                            player.turn(player);
+                            player.turn(player);
+                        }
+
                         keuken(player);
                         break;
                     case '3':
-                        player.decreaseBurnout(1);
+                        if (addToActions("makeList", pastActions)) {
+                            player.decreaseBurnout(1);
+                        }
+
                         keuken(player);
                         break;
                     case '4':
@@ -102,13 +109,19 @@ public class Locations {
                 character();
                 switch (SaxionApp.readChar()) {
                     case '1':
-                        player.increaseBurnout(2);
-                        player.turn(player);
+                        if (addToActions("nap", pastActions)) {
+                            player.increaseBurnout(2);
+                            player.turn(player);
+                        }
+
                         slaapkamer(player);
                         break;
                     case '2':
-                        player.increaseBurnout(6);
-                        player.turn(player);
+                        if (addToActions("meditate", pastActions)) {
+                            player.increaseBurnout(6);
+                            player.turn(player);
+                        }
+
                         slaapkamer(player);
                         break;
                     case '3':
@@ -172,18 +185,27 @@ public class Locations {
                 character();
                 switch (SaxionApp.readChar()) {
                     case '1':
-                        player.increaseBurnout(2);
-                        player.turn(player);
+                        if (addToActions("watchTV", pastActions)) {
+                            player.increaseBurnout(2);
+                            player.turn(player);
+                        }
+
                         woonkamer(player);
                         break;
                     case '2':
-                        player.increaseBurnout(5);
-                        player.turn(player);
-                        player.turn(player);
+                        if (addToActions("inviteFriends", pastActions)) {
+                            player.increaseBurnout(5);
+                            player.turn(player);
+                            player.turn(player);
+                        }
+
                         woonkamer(player);
                         break;
                     case '3':
-                        player.work(player);
+                        if (addToActions("work", pastActions)) {
+                            player.work(player);
+                        }
+
                         woonkamer(player);
                         break;
                     case '4':
@@ -209,17 +231,26 @@ public class Locations {
                 character();
                 switch (SaxionApp.readChar()) {
                     case '1':
-                        player.increaseBurnout(2);
-                        player.turn(player);
+                        if (addToActions("shower", pastActions)) {
+                            player.increaseBurnout(2);
+                            player.turn(player);
+                        }
+
                         badkamer(player);
                         break;
                     case '2':
-                        player.increaseBurnout(1);
-                        player.turn(player);
+                        if (addToActions("washFace", pastActions)) {
+                            player.increaseBurnout(1);
+                            player.turn(player);
+                        }
+
                         badkamer(player);
                         break;
                     case '3':
-                        player.decreaseBurnout(2);
+                        if (addToActions("cleanBathroom", pastActions)) {
+                            player.decreaseBurnout(2);
+                        }
+
                         badkamer(player);
                         break;
                     case '4':
@@ -235,29 +266,57 @@ public class Locations {
     }
 
     public void supermarkt(player player) {
-        SaxionApp.clear();
-        SaxionApp.drawBorderedText("you went to get groceries and restocked the fridge", player.xmiddle, player.ymiddle, 20);
-        player.decreaseBurnout(4);
-        player.turn(player);
-        player.turn(player);
-        player.location = "thuis";
-        thuis(player);
+        if (addToActions("getGroceries", pastActions)) {
+            SaxionApp.clear();
+            SaxionApp.drawBorderedText("you went to get groceries and restocked the fridge", player.xmiddle, player.ymiddle, 20);
+            player.decreaseBurnout(4);
+            player.turn(player);
+            player.turn(player);
+            player.location = "thuis";
+            thuis(player);
+        } else {
+            busstation(player);
+        }
     }
 
     public void cafe(player player) {
         SaxionApp.drawImage("Week1(1)/it's in the game/Game/src/Main/art/bar-background-pixilart (3).png", 50, 50, 1750, 650);
         character();
+
     }
 
     public void kledingwinkel(player player) {
     }
 
-    
+
+    public boolean addToActions(String newAction, String[] array) {
+        boolean canAdd = true;
+        for (int i = 0; i < array.length; i++) {
+            String action = array[i];
+            int numberOfRemainingTurns = array.length - i;
+            if (action == newAction) {
+                SaxionApp.drawText("you can't do this for" + numberOfRemainingTurns + "turns", 0, 0, 0);
+                canAdd = false;
+                if (canAdd = false) {
+                    break;
+                }
+            }
+        }
+        if (canAdd) {
+            array[4] = array[3];
+            array[3] = array[2];
+            array[2] = array[1];
+            array[1] = array[0];
+            array[0] = newAction;
+        }
+
+        return canAdd;
+    }
 
 
 
     private boolean check(player player) {
-        return player.getBurnout() <= 99 && player.getBurnout() >= 0;
+        return player.getBurnout() <= 99 && player.getBurnout() >= 1;
 
     }
 
