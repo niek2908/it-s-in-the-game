@@ -60,13 +60,10 @@ public class Application implements Runnable {
         SaxionApp.setBackgroundColor(Color.white);
         SaxionApp.setFill(Color.black);
         SaxionApp.turnBorderOff();
-        SaxionApp.drawBorderedText("to get to the next screen press a key", xmiddle, ymiddle, 20);
+        SaxionApp.drawImage("Week1(1)/it's in the game/Game/src/Main/art/beginscreen.png",0,0,1900,1000);
         SaxionApp.readChar();
         SaxionApp.clear();
-        SaxionApp.printLine("please select a difficulty setting", Color.black);
-        SaxionApp.printLine("1: easy", Color.black);
-        SaxionApp.printLine("2: medium", Color.black);
-        SaxionApp.printLine("3: hard", Color.black);
+        SaxionApp.drawImage("Week1(1)/it's in the game/Game/src/Main/art/menu.png",0,0,1900,1000);
 
         return SaxionApp.readInt();
 
